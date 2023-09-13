@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style11.css">
+    <title>Online Fitness - Register</title>
+</head>
+<body align="center">
+    <header>
+        <nav>
+            <!-- Your navigation menu here -->
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Online Fitness</h1>
+        <p>Your path to a healthier you starts here.</p>
+    </section>
+
+    <section class="register">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        <p id="registrationMessage" class="success-message"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Online Fitness</p>
+    </footer>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // In a real application, you would send this data to a server for storage.
+            // For simplicity, we'll just display a message here.
+            // You can replace this with server-side logic to handle registration.
+            document.getElementById("registrationMessage").textContent = "Registration successful!";
+            document.getElementById("registrationMessage").classList.add("show-message");
+
+            // Clear the form fields after successful registration
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        });
+    </script>
+</body>
+</html>

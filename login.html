@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Fitness - Login</title>
+</head>
+<body align="center">
+    <header>
+        <nav>
+            <!-- Your navigation menu here -->
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Online Fitness</h1>
+        <p>Your path to a healthier you starts here.</p>
+    </section>
+
+    <section class="login">
+        <h2>Login</h2>
+        <form id="loginForm" action="dashboard.html">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p id="loginMessage" class="error-message"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Online Fitness</p>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // In a real application, you would check the username and password against a database.
+            // For simplicity, we'll use hardcoded values here.
+            const predefinedUsername = "user";
+            const predefinedPassword = "password";
+
+            if (username === predefinedUsername && password === predefinedPassword) {
+                // Redirect to the dashboard or another page on success
+                window.location.href = "dashboard.html";
+            } else {
+                const loginMessage = document.getElementById("loginMessage");
+                loginMessage.textContent = "Invalid username or password. Please try again.";
+                loginMessage.classList.add("show-message");
+            }
+        });
+    </script>
+</body>
+</html>

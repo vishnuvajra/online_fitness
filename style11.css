@@ -1,0 +1,13 @@
+/* Add your existing styles here */
+
+/* Additional styles for the success message */
+.success-message {
+    color: #4CAF50; /* Green color for success messages */
+    font-size: 16px;
+    margin-top: 10px;
+    display: none; /* Hide by default */
+}
+
+.show-message {
+    display: block; /* Show the message when registration is successful */
+}
